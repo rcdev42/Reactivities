@@ -25,11 +25,14 @@ namespace API
 
                 try
                 {
-                    services.GetRequiredService<DataContext>().Database.Migrate();
+                    var dbcontext =  services.GetRequiredService<DataContext>();
+                    dbcontext.Database.Migrate();
+                    Seed.SeedData(dbcontext);
                 }
                 catch (Exception ex)
                 {
-                    services.GetRequiredService<ILogger<Program>>().LogError(ex, "An error occured during DB Migration");
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "An error occured during DB Migration");
                 }
             }
 
