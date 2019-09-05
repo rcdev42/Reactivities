@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Domain;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Net.Http.Headers;
 using Persistence;
 
 namespace API.Controllers
